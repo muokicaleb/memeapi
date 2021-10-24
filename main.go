@@ -51,7 +51,7 @@ func randomNumber() int {
 func listMemes() []string {
 	var files []string
 
-	fileInfo, err := ioutil.ReadDir("./memes")
+	fileInfo, err := ioutil.ReadDir("/memestore")
 
 	if err != nil {
 		log.Fatal(err)

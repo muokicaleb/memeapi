@@ -7,6 +7,7 @@ COPY go.sum ./
 RUN go mod download
 
 COPY *.go ./
+RUN mkdir /memestore
 
 RUN go build -o /memes
 
