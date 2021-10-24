@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  api:
+    build: ./
+    restart: always
+    ports:
+      - 6000:8080
+    volumes:
+      - /media/muoki/7F26D3145516A2103/play/projects/memeapi/github.com/muokicaleb/memeapi/memes:/memestore
+
+  fileserver:
+    build: ./nginx
+    restart: always
+    ports:
+      - "8081:80"
+    volumes:
+      - /media/muoki/7F26D3145516A2103/play/projects/memeapi/github.com/muokicaleb/memeapi/memes:/var/www/html/img/

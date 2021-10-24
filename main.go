@@ -21,13 +21,14 @@ func main() {
 	router := gin.Default()
 	router.GET("/api/v3/meme", getMeme)
 
-	router.Run("localhost:8080")
+	router.Run()
 }
 
 // getAlbums responds with the list of all albums as JSON.
 func getMeme(c *gin.Context) {
 
 	memeUrl := memeServerBaseURl + listAllMemes[randomNumber()]
+	//memeUrl := "ssss"
 	c.String(http.StatusOK, string(memeUrl))
 }
 
