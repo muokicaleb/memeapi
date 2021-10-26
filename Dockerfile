@@ -8,10 +8,10 @@ RUN go mod download
 
 COPY *.go ./
 COPY .env ./
-RUN mkdir /memestore
+RUN mkdir ./memestore
 
-RUN go build -o /memes
+RUN go build -o ./memesapi
 
 EXPOSE 8080
 
-CMD [ "/memes" ]
+CMD [ "./memesapi" ]
